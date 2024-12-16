@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple ATM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>ATM</h2>
+    <p id="balance-text">Current Balance: $0</p>
+    
+    <button onclick="checkBalance()">Check Balance</button>
+    <button onclick="deposit()">Deposit</button>
+    <button onclick="withdraw()">Withdraw</button>
+    <button onclick="exitATM()">Exit</button>
+    
+    <div id="deposit-section" class="output" style="display: none;">
+        <label for="deposit-amount">Deposit Amount:</label>
+        <div id="deposit-keypad" class="keypad">
+            <!-- Numeric keypad for deposit amount -->
+            <button class="key" onclick="addDigit('deposit', 1)">1</button>
+            <button class="key" onclick="addDigit('deposit', 2)">2</button>
+            <button class="key" onclick="addDigit('deposit', 3)">3</button>
+            <button class="key" onclick="addDigit('deposit', 4)">4</button>
+            <button class="key" onclick="addDigit('deposit', 5)">5</button>
+            <button class="key" onclick="addDigit('deposit', 6)">6</button>
+            <button class="key" onclick="addDigit('deposit', 7)">7</button>
+            <button class="key" onclick="addDigit('deposit', 8)">8</button>
+            <button class="key" onclick="addDigit('deposit', 9)">9</button>
+            <button class="key" onclick="addDigit('deposit', 0)">0</button>
+            <button class="key" onclick="clearInput('deposit')">Clear</button>
+            <button class="key" onclick="makeDeposit()">Make Deposit</button>
+        </div>
+    </div>
+
+    <div id="withdraw-section" class="output" style="display: none;">
+        <label for="withdraw-amount">Withdraw Amount:</label>
+        <div id="withdraw-keypad" class="keypad">
+            <!-- Numeric keypad for withdrawal amount -->
+            <button class="key" onclick="addDigit('withdraw', 1)">1</button>
+            <button class="key" onclick="addDigit('withdraw', 2)">2</button>
+            <button class="key" onclick="addDigit('withdraw', 3)">3</button>
+            <button class="key" onclick="addDigit('withdraw', 4)">4</button>
+            <button class="key" onclick="addDigit('withdraw', 5)">5</button>
+            <button class="key" onclick="addDigit('withdraw', 6)">6</button>
+            <button class="key" onclick="addDigit('withdraw', 7)">7</button>
+            <button class="key" onclick="addDigit('withdraw', 8)">8</button>
+            <button class="key" onclick="addDigit('withdraw', 9)">9</button>
+            <button class="key" onclick="addDigit('withdraw', 0)">0</button>
+            <button class="key" onclick="clearInput('withdraw')">Clear</button>
+            <button class="key" onclick="makeWithdrawal()">Make Withdrawal</button>
+        </div>
+    </div>
+    
+    <p id="error-message" style="color: red;"></p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
